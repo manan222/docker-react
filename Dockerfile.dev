@@ -1,0 +1,19 @@
+# pull official base image
+FROM node:13.12.0-alpine
+
+# set working directory of docker container
+WORKDIR /app
+
+# add `/app/node_modules/.bin` to $PATH of docker container
+ENV PATH /app/node_modules/.bin:$PATH
+
+# install app dependencies
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install --silent
+
+# copy everything and paste into working directory /app of docker container
+COPY . ./
+
+# start app
+CMD ["npm", "start"]

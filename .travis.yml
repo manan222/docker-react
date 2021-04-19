@@ -1,0 +1,10 @@
+sudo: required
+services: 
+  - docker
+
+#build the image
+  before_install:
+    - docker build -f dockerFile.dev -t mananali333/first-repo: .
+#test the image
+  script:
+    - docker run  mananali333/first-repo npm run test -- -- covergae

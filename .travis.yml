@@ -4,7 +4,7 @@ services:
 
 #build the image
   before_install:
-    - docker build -f dockerFile.dev -t manan222/docker-react .
+    - docker build  -t manan222/docker-react -f dockerFile.dev .
 #test the image
   script:
-    - docker run  manan222/docker-react npm run test -- -- covergae
+    - docker run -e CI=true  manan222/docker-react npm run test 

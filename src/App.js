@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Changes are shown baby yeah
+          Changes are shown baby.
           Its good to know.
           we are now new here
         </a>
